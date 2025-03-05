@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-15 15:58+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Timon Engelke <timon.engelke@uni-hamburg.de>\n"
+"Last-Translator: Yorik Hansen <yorik@fs-informatik.uni-kiel.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -188,7 +188,7 @@ msgstr ""
 "Hamburg entwickelt.\n"
 "                    Haupt-Anwendungszweck ist, BitPoll als einen der "
 "Services auf <a href=\"https://mafiasi.de\">mafiasi.de</a>\n"
-"                    anderen Studenten anzubieten. BitPoll ist jetzt stabil "
+"                    anderen Studierenden anzubieten. BitPoll ist jetzt stabil "
 "genug für den Produktiveinsatz.\n"
 "                    Der Quelltext kann auf <a href=\"https://github.com/"
 "fsinfuhh/BitPoll\">GitHub</a> gefunden werden."
@@ -225,7 +225,7 @@ msgid ""
 "the University of Hamburg for their testing\n"
 "                    of BitPoll"
 msgstr ""
-"Wir möchten uns bei den Studierenden des Fachbereichs Informatik für ihr "
+"Wir möchten uns bei den Studierenden des Fachbereichs Informatik der Uni Hamburg für ihr "
 "ausführliches Testen von BitPoll bedanken"
 
 #: bitpoll/base/templates/base/about.html:45
@@ -250,7 +250,7 @@ msgid ""
 "version at <a href=\"https://bitpoll.de\">bitpoll.de</a>."
 msgstr ""
 "Diese Seite kann nur von <a href=\"%(account_website)s\">%(account_name)s-"
-"Nutzern</a> genutzt werden.\n"
+"Nutzer*innen</a> genutzt werden.\n"
 "                Wenn du keinen %(account_name)s-Account hast, nutze bitte "
 "die öffentliche Version auf <a href=\"https://bitpoll.de\">bitpoll.de</a>."
 
@@ -385,7 +385,7 @@ msgstr "Erlaube unangemeldete Änderungen an Stimmen"
 #, fuzzy
 #| msgid "One vote per user"
 msgid "one vote per user"
-msgstr "Eine Stimme pro Benutzer"
+msgstr "Eine Stimme pro Benutzer*in"
 
 #: bitpoll/base/templates/base/index.html:178
 #, fuzzy
@@ -417,7 +417,7 @@ msgstr "Login"
 #: bitpoll/registration/templates/registration/login.html:35
 #: bitpoll/registration/templates/registration/request_account.html:15
 msgid "Username"
-msgstr "Benutzername"
+msgstr "Username"
 
 #: bitpoll/base/templates/base/index.html:208 bitpoll/registration/forms.py:36
 #: bitpoll/registration/templates/registration/account.html:100
@@ -433,7 +433,7 @@ msgstr "Melde dich an für mehr"
 #: bitpoll/base/templates/base/index.html:226
 msgid "Registered users have access to the full width of features available."
 msgstr ""
-"Registrierte Benutzer haben Zugang zur vollen Bandbreite von verfügbaren "
+"Registrierte Benutzer*innen haben Zugang zur vollen Bandbreite von verfügbaren "
 "Funktionen."
 
 #: bitpoll/base/templates/base/index.html:233
@@ -451,7 +451,7 @@ msgstr "Abgegebene Stimmen"
 
 #: bitpoll/base/templates/base/index.html:244
 msgid "Users"
-msgstr "Benutzer"
+msgstr "Benutzer*in"
 
 #: bitpoll/base/templates/base/index.html:252
 msgid "Public polls"
@@ -523,11 +523,11 @@ msgstr "Tags"
 
 #: bitpoll/base/templates/base/settings.html:35
 msgid "Owner"
-msgstr "Besitzer"
+msgstr "Besitzer*in"
 
 #: bitpoll/base/templates/base/settings.html:37
 msgid "Not owner"
-msgstr "Nicht der Besitzer"
+msgstr "Nicht die Besitzer*in"
 
 #: bitpoll/base/templates/base/settings.html:44
 msgid "Not own group"
@@ -560,7 +560,7 @@ msgstr ""
 #: bitpoll/base/templates/base/settings.html:73
 msgid "You can edit your account settings in the centralized accounts page"
 msgstr ""
-"Du kannst deine Benutzereinstellungen auf der zentralen Account-Seite "
+"Du kannst deine Benutzer*inneneinstellungen auf der zentralen Account-Seite "
 "verwalten"
 
 #: bitpoll/base/templates/base/settings.html:79
@@ -679,12 +679,12 @@ msgstr ""
 #, fuzzy
 #| msgid "The user {} was already invited"
 msgid "This calendar is already configured"
-msgstr "Der User {} ist bereits eingeladen"
+msgstr "User {} ist bereits eingeladen"
 
 #: bitpoll/groups/forms.py:26
 #, python-format
 msgid "There is no user \"%s.\""
-msgstr "Es gibt keinen Benutzer \"%s\":"
+msgstr "Es gibt \"%s\" nicht als Benutzer*in:"
 
 #: bitpoll/groups/forms.py:33
 #, python-format
@@ -701,8 +701,8 @@ msgid ""
 "You are the sole group admin. Please terminate the group or appoint another "
 "group admin."
 msgstr ""
-"Du bist der einzige Gruppenadministrator. Bitte lösche die Gruppe oder "
-"ernenne einen anderen Gruppenadministrator."
+"Du bist die einzige Gruppenadministrator*in. Bitte lösche die Gruppe oder "
+"ernenne eine andere Gruppenadministrator*in."
 
 #: bitpoll/groups/models.py:88
 msgid "Invalid group name."
@@ -835,7 +835,7 @@ msgstr "Abbrechen"
 
 #: bitpoll/groups/templates/groups/invite.html:38
 msgid "Please enter the account names of the users you want to invite"
-msgstr "Bitte gib die Accountnamen der Nutzer ein, welche zu einladen möchtest"
+msgstr "Bitte gib die Accountnamen der Nutzer*innen ein, welche zu einladen möchtest"
 
 #: bitpoll/groups/templates/groups/mail_new_invitation.txt:1
 #, fuzzy, python-format
@@ -884,7 +884,7 @@ msgstr "Verlassen"
 
 #: bitpoll/groups/templates/groups/show.html:36
 msgid "Invitee"
-msgstr "Eingeladener"
+msgstr "Eingeladene Person"
 
 #: bitpoll/groups/templates/groups/show.html:48
 msgid "Withdraw"
@@ -914,7 +914,7 @@ msgstr "Gruppenadmins"
 
 #: bitpoll/groups/templates/groups/show.html:102
 msgid "Last group admin can't be removed."
-msgstr "Der letzte Gruppenadministrator kann nicht entfernt werden."
+msgstr "Die letzte Gruppenadministrator*in kann nicht entfernt werden."
 
 #: bitpoll/groups/templates/groups/show.html:108
 msgid "Remove"
@@ -930,7 +930,7 @@ msgstr "Admin Rechte erteilen"
 
 #: bitpoll/groups/templates/groups/show.html:123
 msgid "Leave group"
-msgstr "Verlasse die Gruppe"
+msgstr "Gruppe verlassen"
 
 #: bitpoll/groups/views.py:40
 #, python-brace-format
@@ -943,15 +943,15 @@ msgstr "Du hast die Gruppe verlassen."
 
 #: bitpoll/groups/views.py:131
 msgid "User was removed from group"
-msgstr "Der User wurde aus der Gruppe entfernt"
+msgstr "User wurde aus der Gruppe entfernt"
 
 #: bitpoll/groups/views.py:136
 msgid "User was granted group admin."
-msgstr "Der User wurde zum Gruppenadministrator gemacht."
+msgstr "User wurde zur Gruppenadministrator*in gemacht."
 
 #: bitpoll/groups/views.py:140
 msgid "Revoked group admin rights from user."
-msgstr "Gruppenadministrationsrechte wurden dem User entzogen."
+msgstr "User wurden Gruppenadministrationsrechte entzogen."
 
 #: bitpoll/groups/views.py:162
 msgid "Invitation was sent."
@@ -993,12 +993,12 @@ msgid ""
 "Enter the username or group title of the user or group of users you want to "
 "invite."
 msgstr ""
-"Gib die Kennung eines Benutzers oder einen Gruppen-Titel ein, um den "
-"Benutzer oder alle Benutzer der Gruppe einzuladen."
+"Gib die Kennung einer Benutzer*in oder einen Gruppen-Titel ein, um die "
+"Benutzer*in oder alle Benutzer*innen der Gruppe einzuladen."
 
 #: bitpoll/invitations/templates/invitations/Invitation.html:58
 msgid "You can enter multiple users or groups."
-msgstr "Du kannst mehrere Benutzer oder Gruppen angeben."
+msgstr "Du kannst mehrere Benutzer*innen oder Gruppen angeben."
 
 #: bitpoll/invitations/templates/invitations/Invitation.html:59
 msgid "Duplicates are ignored automatically."
@@ -1057,16 +1057,16 @@ msgstr "Du darfst diese Umfrage nicht verändern"
 
 #: bitpoll/invitations/views.py:66
 msgid "The user {} was already invited"
-msgstr "Der Nutzer {} ist bereits eingeladen"
+msgstr "User {} ist bereits eingeladen"
 
 #: bitpoll/invitations/views.py:83
 msgid "The following User/Groups could not be found:  {}"
-msgstr "Der folgende Nutzer oder Gruppe konnte nicht gefunden werden: {}"
+msgstr "User oder Gruppe konnte nicht gefunden werden: {}"
 
 #: bitpoll/poll/models.py:85
 msgid "It is only one vote allowed. You have already voted."
 msgstr ""
-"Es ist nur eine Stimme pro Benutzer erlaubt. Du hast bereits abgestimmt."
+"Es ist nur eine Stimme pro Benutzer*in erlaubt. Du hast bereits abgestimmt."
 
 #: bitpoll/poll/models.py:89
 msgid "Login required to vote."
@@ -1096,7 +1096,7 @@ msgstr "Anonym"
 
 #: bitpoll/poll/models.py:369
 msgid "by an user"
-msgstr "von einem User"
+msgstr "von einer Benutzer*in"
 
 #: bitpoll/poll/models.py:375
 msgid "New votes for {}"
@@ -1185,7 +1185,7 @@ msgid ""
 "                You should have at least one value in this list for the "
 "voting to make sense."
 msgstr ""
-"Hier kannst du die Antworten bearbeiten, die den Teilnehmern für jede "
+"Hier kannst du die Antworten bearbeiten, die den Teilnehmer*innen für jede "
 "Wahlmöglichkeit zur Verfügung stehen. Standardmäßig sind die Antworten "
 "<b>ja</b>, <b>nein</b>, <b>vielleicht</b> und <b>lieber nicht</b> aktiviert, aber du kannst jede "
 "davon bearbeiten oder deaktivieren. Es sollte mindestens eine Antwort in der "
@@ -1327,7 +1327,7 @@ msgstr "Kopiere Antwortmöglichkeiten"
 
 #: bitpoll/poll/templates/poll/copy.html:113
 msgid "Reset ownership"
-msgstr "Besitzer zurücksetzen"
+msgstr "Besitzer*in zurücksetzen"
 
 #: bitpoll/poll/templates/poll/copy.html:117
 msgid "Date shift (days)"
@@ -1467,7 +1467,7 @@ msgstr ""
 #: bitpoll/poll/templates/poll/poll.html:46
 #: bitpoll/poll/templates/poll/poll.html:85
 msgid "Hidden User"
-msgstr "Versteckter User"
+msgstr "Versteckte Benutzer*in"
 
 #: bitpoll/poll/templates/poll/poll.html:60
 msgid "Assigned after voting by"
@@ -1484,7 +1484,7 @@ msgstr "Stimme löschen"
 
 #: bitpoll/poll/templates/poll/poll.html:104
 msgid "Assign user"
-msgstr "Weise einen User zu"
+msgstr "Weise eine Benutzer*in zu"
 
 #: bitpoll/poll/templates/poll/poll.html:142
 #: bitpoll/poll/templates/poll/poll_header.html:105
@@ -1558,7 +1558,7 @@ msgstr "Art der Umfrage"
 
 #: bitpoll/poll/templates/poll/poll_header.html:41
 msgid "Ownership"
-msgstr "Besitzer"
+msgstr "Besitzer*in"
 
 #: bitpoll/poll/templates/poll/poll_header.html:47
 #: bitpoll/poll/templates/poll/settings.html:167
@@ -1614,7 +1614,7 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"\t\tEigentümer und Administratoren sehen immer alle Stimmen."
+"\t\tEigentümer*innen und Administrator*innen sehen immer alle Stimmen."
 
 #: bitpoll/poll/templates/poll/settings.html:61
 msgid "Timezone"
@@ -1622,7 +1622,7 @@ msgstr "Zeitzone"
 
 #: bitpoll/poll/templates/poll/settings.html:73
 msgid "Translate all times to the users timezone"
-msgstr "Zeiten in der Zeitzone des Benutzers anzeigen"
+msgstr "Zeiten in den Zeitzonen der Benutzer*innen anzeigen"
 
 #: bitpoll/poll/templates/poll/settings.html:89
 msgid "Save changes"
@@ -1654,7 +1654,7 @@ msgstr "Erlaube unangemeldete Änderungen an Stimmen"
 
 #: bitpoll/poll/templates/poll/settings.html:121
 msgid "One vote per user"
-msgstr "Eine Stimme pro Benutzer"
+msgstr "Eine Stimme pro Benutzer*in"
 
 #: bitpoll/poll/templates/poll/settings.html:125
 msgid "Show invitations as empty votes"
@@ -1666,7 +1666,7 @@ msgstr "Verbiete leere Wahlmöglichkeiten"
 
 #: bitpoll/poll/templates/poll/settings.html:133
 msgid "Hide participants"
-msgstr "Teilnehmerliste verbergen"
+msgstr "Teilnehmendenliste verbergen"
 
 #: bitpoll/poll/templates/poll/settings.html:137
 msgid "Show score instead of percentage"
@@ -1695,9 +1695,9 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"\t\tNur der Eigentümer, oder ein Mitglied der Eigentümer-Gruppe, kann diese "
+"\t\tNur die Eigentümer*in, oder ein Mitglied der Eigentümer*innen-Gruppe, kann diese "
 "Einstellungen verändern.\n"
-"Setzt du dies auf \"Niemand\", so kann jeder die Umfrage in Besitz nehmen. "
+"Setzt du dies auf \"Niemand\", so können alle die Umfrage in Besitz nehmen. "
 "Die meisten einschränkenden Einstellungen oben sind nutzlos, bis du diese "
 "Umfrage in Besitz genommen hast."
 
@@ -1780,7 +1780,7 @@ msgstr "Some-Group/Third-Choice"
 #: bitpoll/poll/templates/poll/vote_assign.html:6
 #: bitpoll/poll/templates/poll/vote_assign.html:18
 msgid "Assign a vote to a user"
-msgstr "Eine Stimme einem Benutzer zuweisen"
+msgstr "Eine Stimme einer Benutzer*in zuweisen"
 
 #: bitpoll/poll/templates/poll/vote_assign.html:13
 #: bitpoll/poll/templates/poll/vote_creation.html:15
@@ -1802,11 +1802,11 @@ msgid ""
 msgstr ""
 "\n"
 "            <p>Hier kannst du der unter dem Namen <b>%(name)s</b> "
-"abgegebenen Stimme einen Benutzer zuweisen.</p>"
+"abgegebenen Stimme einer Benutzer*in zuweisen.</p>"
 
 #: bitpoll/poll/templates/poll/vote_assign.html:28
 msgid "New vote owner"
-msgstr "Neuer Besitzer der Stimme"
+msgstr "Neue Besitzer*in der Stimme"
 
 #: bitpoll/poll/templates/poll/vote_assign.html:32
 msgid "Assign"
@@ -1831,12 +1831,12 @@ msgid ""
 msgstr ""
 "\n"
 "                <ul class=\"help-list\">\n"
-"                    <li>Nur dieser Benutzer wird die Stimme bearbeiten oder "
+"                    <li>Nur diese Benutzer*in wird die Stimme bearbeiten oder "
 "löschen dürfen.</li>\n"
-"                    <li>War der Benutzer eingeladen, wird seine Einladung "
+"                    <li>War die Benutzer*in eingeladen, wird ihre Einladung "
 "als erfüllt markiert.</li>\n"
 "                    <li>Wenn Mehrfachabstimmungen verboten sind, kannst du "
-"keinen Benutzer zuweisen, der bereits abgestimmt hat.</li>\n"
+"keine Benutzer*in zuweisen, die bereits abgestimmt hat.</li>\n"
 "                    <li>Der Anzeigename neben der Stimme wird überschrieben."
 "</li>\n"
 "                    <li>Die Stimme wird als \"nachträglich zugewiesen\" "
@@ -1901,7 +1901,7 @@ msgstr "Löschen nicht erlaubt. Du bist nicht angemeldet."
 #: bitpoll/poll/views.py:68
 msgid "You can see the results because you are the owner of the Poll"
 msgstr ""
-"Du kannst die Ergebnisse sehen, weil du der Eigentümer dieser Umfrage bist"
+"Du kannst die Ergebnisse sehen, weil du die Eigentümer*in dieser Umfrage bist"
 
 #: bitpoll/poll/views.py:77
 msgid "No individual results are shown due to Poll settings"
@@ -1929,8 +1929,8 @@ msgid ""
 "that everyone is able to change every vote that has not been assigned to a "
 "user. If you want to prevent this, change the settings."
 msgstr ""
-"Zurzeit ist es unangemeldeten Nutzern erlaubt, Stimmen zu verändern. Das "
-"bedeutet, dass jeder die Stimmen ändern kann, die nicht einem Nutzer "
+"Zurzeit ist es unangemeldeten Nutzer*innen erlaubt, Stimmen zu verändern. Das "
+"bedeutet, dass alle die Stimmen ändern können, die nicht einer Nutzer*in "
 "zugewiesen sind. Wenn du das nicht möchtest, kannst du es in den "
 "Einstellungen ändern."
 
@@ -2026,16 +2026,16 @@ msgstr "Du musst entweder einen Namen angeben oder anonym abstimmen."
 #: bitpoll/poll/views.py:961
 msgid "This user has already voted and only one vote per user is permitted"
 msgstr ""
-"Dieser Nutzer hat bereits abgestimmt, und es ist nur eine Stimme pro Nutzer "
+"Diese Nutzer*in hat bereits abgestimmt, und es ist nur eine Stimme pro Nutzer*in "
 "erlaubt"
 
 #: bitpoll/poll/views.py:963
 msgid "The user {} does not exists"
-msgstr "Der Nutzer {} existiert nicht"
+msgstr "User {} existiert nicht"
 
 #: bitpoll/poll/views.py:1144
 msgid "User {} not Found"
-msgstr "Benutzer {} nicht gefunden"
+msgstr "User {} nicht gefunden"
 
 #: bitpoll/poll/views.py:1157
 msgid "Settings have been changed"
@@ -2145,7 +2145,7 @@ msgstr ""
 "\n"
 "du möchtest deine E-Mail Adresse\n"
 "  %(email)s\n"
-"mit dem %(project_name)s Nutzer %(username)s verbinden.\n"
+"mit der %(project_name)s Nutzer*in %(username)s verbinden.\n"
 "\n"
 "Wenn dies korrekt ist, besuche den folgenden Link:\n"
 "  %(link)s\n"
@@ -2161,8 +2161,8 @@ msgid ""
 "Your account doesn't have access to this page. To proceed, please login with "
 "an account that has access."
 msgstr ""
-"Du hast keinen Zugriff auf diese Seite. Um fortzufahren melde dich bitte mit "
-"einem Nutzer an, welcher die benötigten Rechte hat."
+"Du hast keinen Zugriff auf diese Seite. Um fortzufahren melde dich bitte als "
+"eine Nutzer*in an, welche die benötigten Rechte hat."
 
 #: bitpoll/registration/templates/registration/login.html:22
 msgid "Please login to see this page."
@@ -2177,7 +2177,7 @@ msgid ""
 "You can not reset your password here, as the account management is "
 "centralized"
 msgstr ""
-"Du kannst dein Passwort hier nicht zurücksetzen, weil das Nutzermanagement "
+"Du kannst dein Passwort hier nicht zurücksetzen, weil das Usermanagement "
 "zentralisiert ist."
 
 #: bitpoll/registration/templates/registration/password_reset_complete.html:4
@@ -2251,7 +2251,7 @@ msgstr "Bitte gehe zu der folgenden Seite und wähle ein neues Passwort:"
 
 #: bitpoll/registration/templates/registration/password_reset_email.html:8
 msgid "Your username, in case you've forgotten:"
-msgstr "Dein Nutzernahme, falls du ihn vergessen hast:"
+msgstr "Dein Username, falls du ihn vergessen hast:"
 
 #: bitpoll/registration/templates/registration/password_reset_email.html:10
 msgid "Thanks for using our site!"
@@ -2322,7 +2322,7 @@ msgstr "Entschuldigung, aber der übergebene Token ist ungültig."
 
 #: bitpoll/registration/views.py:61
 msgid "This User already exists"
-msgstr "Dieser Benutzer existiert bereits"
+msgstr "Diese Benutzer*in existiert bereits"
 
 #: bitpoll/registration/views.py:108
 msgid "Password was changed."
