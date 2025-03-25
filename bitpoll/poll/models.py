@@ -250,7 +250,7 @@ class ChoiceValue(models.Model):
     icon = models.CharField(max_length=64)
     color = models.CharField(max_length=7, validators=[RegexValidator('#?[a-fA-F0-9]{6}$',
                                                                       message=_("Give an HTML color without the #"))])
-    weight = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
+    weight = models.DecimalField(max_digits=6, decimal_places=3, default=0.0)
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
     deleted = models.BooleanField(default=False)
 
