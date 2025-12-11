@@ -35,7 +35,7 @@ def autocomplete_users(term):
         users = []
         dups = set()
         _add_nodup('username', terms[0], users, dups)
-        _add_nodup("regexp_replace(username, '^([0-9]+|x)', '')", terms[0], users, dups)
+        # _add_nodup("regexp_replace(username, '^([0-9]+|x)', '')", terms[0], users, dups)
         _add_nodup('lower(first_name)', terms[0], users, dups)
         _add_nodup('lower(last_name)', terms[0], users, dups)
         
