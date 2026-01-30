@@ -109,7 +109,7 @@ requests==2.32.3
     #   simple-openid-connect
 sentry-sdk==2.20.0
     # via -r requirements-production.in
-simple-openid-connect[django]==1.1.0
+simple-openid-connect[django]==2.3.2
     # via -r requirements-production.in
 six==1.17.0
     # via
