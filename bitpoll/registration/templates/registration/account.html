@@ -31,13 +31,13 @@
                     {% comment %}
                     {# TODO: wollen wir den displaynamen ändern können? #}
                     <form method="post" class="form-inline">
-                        <div class="panel panel-default" id="panel-settings-nickname">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
+                        <div class="card" id="panel-settings-nickname">
+                            <div class="card-header">
+                                <h3 class="card-title">
                                     {% trans "Nickname" %}
                                 </h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <p>{% trans 'If you choose a nickname, it will be shown instead of your first name (e.g. when you vote in Dudle)' %}</p>
                                 {% csrf_token %}
                                 <input type="hidden" name="form" value="change_nick" />
@@ -47,14 +47,14 @@
                                         <span class="input-group-addon"> ({{ username }})</span>
                                     </div>
                                     {% if nick_change_form.nickname.errors %}
-                                    <div class="help-block">
+                                    <div class="form-text">
                                     {% for error in nick_change_form.nickname.errors %}{{ error }} {% endfor %}
                                     </div>
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="panel-footer">
-                                <button type="submit" class="btn btn-primary btn-xs">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
                                     {% trans "Change Nickname" %}
                                 </button>
                             </div>
@@ -63,27 +63,27 @@
                     {% endcomment %}
 
                     <form method="post">
-                        <div class="panel panel-default" id="panel-settings-email">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
+                        <div class="card" id="panel-settings-email">
+                            <div class="card-header">
+                                <h3 class="card-title">
                                     {% trans "Email" %}
                                 </h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 {% csrf_token %}
                                 <input type="hidden" name="form" value="change_email"/>
                                 <div class="form-group{% if email_change_form.email.errors %} has-error{% endif %}">
-                                    <label class="control-label">{% trans "New Email Address" %}</label>
+                                    <label class="col-form-label">{% trans "New Email Address" %}</label>
                                     {% render_field email_change_form.email class+="form-control" %}
                                     {% if email_change_form.email.errors %}
-                                        <div class="help-block">
+                                        <div class="form-text">
                                             {% for error in email_change_form.email.errors %}{{ error }} {% endfor %}
                                         </div>
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="panel-footer">
-                                <button type="submit" class="btn btn-primary btn-xs">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
                                     {% trans "Change Email" %}
                                 </button>
                             </div>
@@ -92,48 +92,48 @@
                 </div>
                 <div class="col-sm-6">
                     <form method="post">
-                        <div class="panel panel-default" id="panel-settings-password">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
+                        <div class="card" id="panel-settings-password">
+                            <div class="card-header">
+                                <h3 class="card-title">
                                     {% trans "Password" %}
                                 </h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 {% csrf_token %}
                                 <input type="hidden" name="form" value="change_pw"/>
                                 <div class="form-group{% if password_change_form.old_password.errors %} has-error{% endif %}">
-                                    <label class="control-label">{% trans "Old password" %}</label>
+                                    <label class="col-form-label">{% trans "Old password" %}</label>
                                     {% render_field password_change_form.old_password class+="form-control" %}
                                     {% if password_change_form.old_password.errors %}
-                                        <div class="help-block">
+                                        <div class="form-text">
                                             {% for error in password_change_form.old_password.errors %}
                                                 {{ error }} {% endfor %}
                                         </div>
                                     {% endif %}
                                 </div>
                                 <div class="form-group{% if password_change_form.new_password1.errors %} has-error{% endif %}">
-                                    <label class="control-label">{% trans "New password" %}</label>
+                                    <label class="col-form-label">{% trans "New password" %}</label>
                                     {% render_field password_change_form.new_password1 class+="form-control" %}
                                     {% if password_change_form.new_password1.errors %}
-                                        <div class="help-block">
+                                        <div class="form-text">
                                             {% for error in password_change_form.new_password1.errors %}
                                                 {{ error }} {% endfor %}
                                         </div>
                                     {% endif %}
                                 </div>
                                 <div class="form-group{% if password_change_form.new_password2.errors %} has-error{% endif %}">
-                                    <label class="control-label">{% trans "New password confirmation" %}</label>
+                                    <label class="col-form-label">{% trans "New password confirmation" %}</label>
                                     {% render_field password_change_form.new_password2 class+="form-control" %}
                                     {% if password_change_form.new_password2.errors %}
-                                        <div class="help-block">
+                                        <div class="form-text">
                                             {% for error in password_change_form.new_password2.errors %}
                                                 {{ error }} {% endfor %}
                                         </div>
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="panel-footer">
-                                <button type="submit" class="btn btn-primary btn-xs">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
                                     {% trans "Change password" %}
                                 </button>
                             </div>

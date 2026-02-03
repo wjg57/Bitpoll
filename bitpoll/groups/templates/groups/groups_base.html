@@ -10,7 +10,7 @@
 {% get_user_groups as groups %}
     <section class="section"><div class="container">
 <div class="row">
-  <div class="col-xs-3">
+  <div class="col-sm-3">
     {% if user_invitations %}
     <h4>
       {% trans 'Invitations' %}
@@ -22,13 +22,13 @@
           {% with group=invitation.group %}
           <strong>{{ group.name }}</strong>
           {% endwith %}
-          <form method="post" action="{% url 'groups_invitation_action' invitation.pk %}" class="form-inline pull-right">
+          <form method="post" action="{% url 'groups_invitation_action' invitation.pk %}" class="form-inline float-right">
             {% csrf_token %}
             <div class="form-group btn-group">
-              <button class="btn btn-success btn-xs" title="{% trans 'Accept invitation' %}" name="accept">
+              <button class="btn btn-success btn-sm" title="{% trans 'Accept invitation' %}" name="accept">
                 <span class="glyphicon glyphicon-ok"></span>
               </button>
-              <button class="btn btn-danger btn-xs" title="{% trans 'Decline invitation' %}" name="refuse">
+              <button class="btn btn-danger btn-sm" title="{% trans 'Decline invitation' %}" name="refuse">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </div>
@@ -41,16 +41,16 @@
     {% endif %}
     <h4>
       {% trans 'My Groups' %}
-      <a class="action success btn-xs pull-right" title="{% trans 'Create new group' %}" href="{% url 'groups_create' %}">
-        <span class="glyphicon glyphicon-plus-sign"></span>
-        <span class="hidden-sm hidden-xs">{% trans 'New' %}</span>
+      <a class="action success btn-sm float-right" title="{% trans 'Create new group' %}" href="{% url 'groups_create' %}">
+        <span class="fa-solid fa-plus"></span>
+        <span class="d-none d-md-inline">&nbsp;{% trans 'New' %}</span>
       </a>
     </h4>
     {% block group_list %}
     {% if groups %}
     <div class="list-group">  
       {% for group in groups %}      
-      <a class="list-group-item{% if active_group_name == group.name %} active{% endif %}" href="{% url 'groups_show' group.name %}">
+      <a class="list-group-item list-group-item-action{% if active_group_name == group.name %} active{% endif %}" href="{% url 'groups_show' group.name %}">
         {{ group.name }}
       </a>
       {% endfor %}
@@ -61,7 +61,7 @@
     {% endblock %}
   </div>
     {% value_from_settings SITE_NAME as project_name %}
-  <div class="col-xs-9">
+  <div class="col-sm-9">
       <h2>{% block group_ptitle %}{% blocktrans %}{{ project_name }} Groups {% endblocktrans %}{% endblock %}</h2>
       <hr/>
     {% block group_content %}

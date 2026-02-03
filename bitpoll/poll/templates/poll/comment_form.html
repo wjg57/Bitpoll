@@ -45,7 +45,7 @@
         <label for="{{ comment_form.text.name }}">{% trans 'Comment' %}</label>
         <textarea title="new Comment" name="{{ comment_form.text.name }}" class="form-control"
                   rows="6">{{ comment_form.text.value|default_if_none:'' }}</textarea>
-        <p class="help-block">
+        <p class="form-text">
             {% blocktrans %}
                 You can use
                 <a href="http://daringfireball.net/projects/markdown/" target="_blank">Markdown</a>

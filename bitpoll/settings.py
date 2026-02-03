@@ -147,8 +147,7 @@ PIPELINE = {
         },
         'base_screen': {
             'source_filenames': (
-                'css/bootstrap.css',
-                'css/bootstrap-theme.css',
+                'css/bootstrap.min.css',
                 # 'css/jquery-range.css',  # this belongs to commented out JS class
                 'scss/form.scss',
                 'scss/action.scss',

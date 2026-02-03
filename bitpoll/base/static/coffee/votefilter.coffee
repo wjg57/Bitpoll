@@ -144,9 +144,9 @@ i18n.ready (gettext) ->
 
         # Hide votes
         if filtered
-            $filterButton.removeClass("btn-default").addClass("btn-warning")
+            $filterButton.removeClass("btn-secondary").addClass("btn-warning")
         else
-            $filterButton.removeClass("btn-warning").addClass("btn-default")
+            $filterButton.removeClass("btn-warning").addClass("btn-secondary")
 
 
     updateCount = ->

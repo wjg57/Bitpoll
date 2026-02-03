@@ -72,7 +72,7 @@
                         </td>
                         <td>
                             {% for event in events %}
-                                <span class="label label-info">{{ event.DTSTART }} - {{ event.DTEND }}: <b>{{ event.NAME }}</b></span>
+                                <span class="badge badge-info">{{ event.DTSTART }} - {{ event.DTEND }}: <b>{{ event.NAME }}</b></span>
                             {% endfor %}
                         </td>
                     </tr>
@@ -97,14 +97,16 @@
                                 class="form-control" id="name"/>
 
                         {% if poll.anonymous_allowed %}
-                            <br>
-                            <input type="checkbox" name="anonymous" id="anonymous"
+                            <div class="form-check justify-content-start">
+                                <input type="checkbox" name="anonymous" id="anonymous"
+                                class="form-check-input"
                                 title="{% trans 'Post anonymous vote' %}" value="true"
-                                   {% if current_vote.anonymous %}
-                                        checked
-                                   {% endif %}
-                            />
-                            <label for="anonymous">{% trans 'Post anonymous vote' %}</label> <br/>
+                                {% if current_vote.anonymous %}
+                                checked
+                                {% endif %}
+                                />
+                                <label for="anonymous" class="form-check-label">{% trans 'Post anonymous vote' %}</label> <br/>
+                            </div>
                         {% endif %}
                     </td>
                 </tr>

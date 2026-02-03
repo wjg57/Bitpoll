@@ -12,23 +12,23 @@
                     <form method="post">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label class="control-label">{% trans "Username" %}</label>
-                            <p class="form-control-static">{{ username }}</p>
+                            <label class="col-form-label">{% trans "Username" %}</label>
+                            <p class="form-control-plaintext">{{ username }}</p>
                         </div>
                         <div class="form-group{% if form.new_password1.errors %} has-error{% endif %}">
-                            <label class="control-label">{% trans "Password" %}</label>
+                            <label class="col-form-label">{% trans "Password" %}</label>
                             {% render_field form.new_password1 class+="form-control" %}
                             {% if form.new_password1.errors %}
-                                <span class="help-block">
+                                <span class="form-text">
                                 {% for error in form.new_password1.errors %}{{ error }} {% endfor %}
                             </span>
                             {% endif %}
                         </div>
                         <div class="form-group{% if form.new_password2.errors %} has-error{% endif %}">
-                            <label class="control-label">{% trans "Password confirmation" %}</label>
+                            <label class="col-form-label">{% trans "Password confirmation" %}</label>
                             {% render_field form.new_password2 class+="form-control" %}
                             {% if form.new_password2.errors %}
-                                <span class="help-block">
+                                <span class="form-text">
                                 {% for error in form.new_password2.errors %}{{ error }} {% endfor %}
                             </span>
                             {% endif %}

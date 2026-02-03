@@ -46,9 +46,9 @@
 
                 <div class="form-group">
                     <label for="url-input">{% trans 'URL name' %}</label>
-                    <div class="pull-right">
+                    <div class="float-right">
                         <script nonce="{% csp_js_nonce %}">var RANDOM_SLUGS = {% value_from_settings DEFAULT_RANDOM_SLUG %};</script>
-                            <div class="checkbox-inline">
+                            <div class="d-inline">
                                 <input type="checkbox" name="random_slug" value="test" id="random_slug">
                                 <label for="random_slug">{% trans 'Randomize Urls' %}</label>
                             </div>
@@ -92,25 +92,25 @@
 
             <div class="col-md-5 col-md-offset-1">
                 <label>{% trans 'Settings to copy' %}</label>
-                <div class="checkbox">
-                    <input type="checkbox" id="copy_choices" name="copy_choices" checked>
-                    <label for="copy_choices">{% trans 'Copy choices' %}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="copy_choices" name="copy_choices" checked>
+                    <label class="form-check-label" for="copy_choices">{% trans 'Copy choices' %}</label>
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="copy_invitations" name="copy_invitations" checked>
-                    <label for="copy_invitations">{% trans 'Copy invitations' %}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="copy_invitations" name="copy_invitations" checked>
+                    <label class="form-check-label" for="copy_invitations">{% trans 'Copy invitations' %}</label>
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="create_invitations_from_votes" name="create_invitations_from_votes">
-                    <label for="create_invitations_from_votes">{% trans 'Create invitations from votes' %}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="create_invitations_from_votes" name="create_invitations_from_votes">
+                    <label class="form-check-label" for="create_invitations_from_votes">{% trans 'Create invitations from votes' %}</label>
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="copy_ans_values" name="copy_ans_values" checked>
-                    <label for="copy_ans_values">{% trans 'Copy possible answer values' %}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="copy_ans_values" name="copy_ans_values" checked>
+                    <label class="form-check-label" for="copy_ans_values">{% trans 'Copy possible answer values' %}</label>
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="reset_ownership" name="reset_ownership">
-                    <label for="reset_ownership">{% trans 'Reset ownership' %}</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="reset_ownership" name="reset_ownership">
+                    <label class="form-check-label" for="reset_ownership">{% trans 'Reset ownership' %}</label>
                 </div>
 
                 <div class="form-group">

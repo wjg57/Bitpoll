@@ -117,10 +117,10 @@
                         </div>
                     {# TODO: due date, public? #}
                         <script nonce="{% csp_js_nonce %}">var RANDOM_SLUGS = {% value_from_settings DEFAULT_RANDOM_SLUG %};</script>
-                        <div class="col-md-12">
+                        <div class="col-lg-12 px-0">
                             <div id="slug" class="form-group">
                                 <div class="slug-right">
-                                    <div class="checkbox-inline">
+                                    <div class="d-inline">
                                         <input type="checkbox" name="random_slug" value="random_slug" id="random_slug" {% if randomize_url %}checked="checked"{% endif %}>
                                         <label for="random_slug">{% trans 'Randomize Urls' %}</label>
                                     </div>
@@ -128,7 +128,7 @@
                                     </button>
                                 </div>
                                 <label for="slug">{% trans 'URL name' %}</label>
-                                <div class="input-group"><span class="input-group-addon">{% value_from_settings BASE_URL %}/poll/</span>
+                                <div class="input-group"><span class="input-group-prepend input-group-text">{% value_from_settings BASE_URL %}/poll/</span>
                                     <input class="form-control" id="slug-input" name="{{ poll_form.url.name }}" type="text"
                                            value="{{ poll_form.url.value|default_if_none:random_url }}" maxlength="80">
                                     {% if poll_form.url.errors %}
@@ -143,8 +143,8 @@
                                 </div>
                             </div>
                         </div>
-                    <div>
-                        <div class="col-md-6">
+                    <div class="row mb-2">
+                        <div class="col-lg-6">
                             <label for="due-date-input">{% trans 'Due date' %}</label>
                             <div class="form-group">
 
@@ -164,30 +164,30 @@
                                 {% render_field poll_form.description class+="form-control"%}
                             </div>
                         </div>
-                        <div class="col-md-offset-1 col-md-5">
-                            <div class="checkbox">
-                                <input type="checkbox" id="anonymous_allowed" name="{{ poll_form.anonymous_allowed.name }}" {% if poll_form.anonymous_allowed.value %} checked {% endif %}>
-                                <label for="anonymous_allowed">{% trans 'allow anonymous votes' %}</label>
+                        <div class="offset-lg-1 col-lg-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="anonymous_allowed" name="{{ poll_form.anonymous_allowed.name }}" {% if poll_form.anonymous_allowed.value %} checked {% endif %}>
+                                <label class="form-check-label" for="anonymous_allowed">{% trans 'allow anonymous votes' %}</label>
                             </div>
-                            <div class="checkbox">
-                                <input type="checkbox" id="require_login" name="{{ poll_form.require_login.name }}" {% if poll_form.require_login.value %} checked {% endif %}>
-                                <label for="require_login">{% trans 'login required' %}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="require_login" name="{{ poll_form.require_login.name }}" {% if poll_form.require_login.value %} checked {% endif %}>
+                                <label class="form-check-label" for="require_login">{% trans 'login required' %}</label>
                             </div>
-                            <div class="checkbox">
-                                <input type="checkbox" id="require_invitation" name="{{ poll_form.require_invitation.name }}" {% if poll_form.require_invitation.value %} checked {% endif %}>
-                                <label for="require_invitation">{% trans 'invitation required to vote' %}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="require_invitation" name="{{ poll_form.require_invitation.name }}" {% if poll_form.require_invitation.value %} checked {% endif %}>
+                                <label class="form-check-label" for="require_invitation">{% trans 'invitation required to vote' %}</label>
                             </div>
-                            <div class="checkbox">
-                                <input type="checkbox" id="allow_unauthenticated_vote_changes" name="{{ poll_form.allow_unauthenticated_vote_changes.name }}" {% if poll_form.allow_unauthenticated_vote_changes.value %} checked {% endif %}>
-                                <label for="allow_unauthenticated_vote_changes">{% trans 'allow unauthenticated vote changes' %}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="allow_unauthenticated_vote_changes" name="{{ poll_form.allow_unauthenticated_vote_changes.name }}" {% if poll_form.allow_unauthenticated_vote_changes.value %} checked {% endif %}>
+                                <label class="form-check-label" for="allow_unauthenticated_vote_changes">{% trans 'allow unauthenticated vote changes' %}</label>
                             </div>
-                            <div class="checkbox">
-                                <input type="checkbox" id="one_vote_per_user" name="{{ poll_form.one_vote_per_user.name }}" {% if poll_form.one_vote_per_user.value %} checked {% endif %}>
-                                <label for="one_vote_per_user">{% trans 'one vote per user' %}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="one_vote_per_user" name="{{ poll_form.one_vote_per_user.name }}" {% if poll_form.one_vote_per_user.value %} checked {% endif %}>
+                                <label class="form-check-label" for="one_vote_per_user">{% trans 'one vote per user' %}</label>
                             </div>
-                            <div class="checkbox">
-                                <input type="checkbox" id="vote_all" name="{{ poll_form.vote_all.name }}" {% if poll_form.vote_all.value %} checked {% endif %}>
-                                <label for="vote_all">{% trans 'forbid empty choices' %}</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="vote_all" name="{{ poll_form.vote_all.name }}" {% if poll_form.vote_all.value %} checked {% endif %}>
+                                <label class="form-check-label" for="vote_all">{% trans 'forbid empty choices' %}</label>
                             </div>
                         </div>
                     </div></div>
@@ -196,7 +196,7 @@
                             <span class="more"><i class="fa-solid fa-plus-square-o"></i>
                                 <span>{% trans 'More options' %}</span>
                             </span>
-                            <span class="less hidden"><i class="fa-solid fa-minus-square-o"></i>
+                            <span class="less d-none"><i class="fa-solid fa-minus-square-o"></i>
                                 <span>{% trans 'Less options' %}</span>
                             </span>
                         </a>

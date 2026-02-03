@@ -60,7 +60,7 @@
                                         {% trans 'Assigned after voting by' %} {{ vote.assigned_by.get_displayname|force_escape|force_escape }}</div>
                                     {% endif %}">
                                 {% if vote.comment or vote.assigned_by %}
-                                    <div class="pull-left vote-extra-icons">
+                                    <div class="float-left vote-extra-icons">
                                         {% if vote.comment %}
                                             <i class="fa-solid fa-comment-o"></i>
                                         {% endif %}
@@ -88,26 +88,26 @@
                                     <span class="bg-{{ vote_choice.value.color }} fa-solid fa-{% if vote_choice.value %}{{ vote_choice.value.icon }}{% else %}question{% endif %}"></span>
                                 </td>
                             {% endfor %}
-                            <td class="noprint vote-actions">
+                            <td class="noprint vote-actions py-0">
                                 {% if vote|vote_can_edit:request.user %}
                                     <a href="{% url 'poll_voteEdit' poll.url vote.id %}"
-                                       class="btn btn-xs btn-default" title="{{ _('Edit vote') }}"><i
+                                       class="btn btn-sm btn-default" title="{{ _('Edit vote') }}"><i
                                             class="fa-solid fa-pencil"></i></a>
                                 {% endif %}
                                 {% if vote|vote_can_delete:request.user %}
                                     <a href="{% url 'poll_voteDelete' poll.url vote.id %}"
-                                       class="btn btn-xs btn-default" title="{{ _('Delete vote') }}"><i
+                                       class="btn btn-sm btn-default" title="{{ _('Delete vote') }}"><i
                                             class="fa-solid fa-trash-o"></i></a>
                                 {% endif %}
                                 {% if not request.user.is_anonymous and vote.user == None and vote|vote_can_edit:request.user %}
                                     <a href="{% url 'poll_voteAssign' poll.url vote.id %}"
-                                       class="btn btn-xs btn-default" title="{{ _('Assign user') }}">
+                                       class="btn btn-sm btn-default" title="{{ _('Assign user') }}">
                                         <i class="fa-solid fa-user"></i></a>
                                 {% endif %}
                                 {% comment %}
                                     {% if not vote.anonymous and not vote.user and poll.user_can_administrate(current_user) %}
                                         <a href="{{ url_for('poll_vote_assign', slug=poll.slug, vote_id=vote.id) }}"
-                                           class="btn btn-xs btn-default" title="{{ _('Assign a user') }}"><i
+                                           class="btn btn-sm btn-default" title="{{ _('Assign a user') }}"><i
                                                 class="fa-solid fa-user"></i></a>
                                     {% endif %}
                                     </td>
@@ -138,7 +138,7 @@
                             <td class="noprint vote-actions">
                                 {% if invited.user == request.user %}
                                     <a href="{% url 'poll_vote' poll.url %}"
-                                       class="btn btn-xs btn-default" title="{{ _('Vote') }}"><i
+                                       class="btn btn-sm btn-default" title="{{ _('Vote') }}"><i
                                             class="fa-solid fa-pencil"></i></a>
                                 {% endif %}
                             </td>
@@ -211,7 +211,7 @@
             {# TODO: Add legend for choice values #}
         </div>
 
-        <div class="pull-right">
+        <div class="float-right">
             <a href="{% url 'poll_export_csv' poll.url %}">{% trans 'Export as CSV' %}</a>
         </div>
 
@@ -226,12 +226,12 @@
 
                     <div class="edit">
                         {% if not request.user.is_anonymous and request.user == comment.user %}{# TODO: wenn der user admin/owner ist #}
-                        <a href="{% url 'poll_deleteComment' poll.url comment.id %}" title="{% trans 'Delete comment' %}" class="btn btn-default btn-xs">
+                        <a href="{% url 'poll_deleteComment' poll.url comment.id %}" title="{% trans 'Delete comment' %}" class="btn btn-default btn-sm">
                                 <i class="fa-solid fa-trash-o"></i>
                         </a>
                         {% endif %}
                         {% if comment|comment_can_edit:request.user %}
-                            <a href="{% url 'poll_comment_edit' poll.url comment.id %}" title="{% trans 'Edit comment' %}" class="btn btn-default btn-xs">
+                            <a href="{% url 'poll_comment_edit' poll.url comment.id %}" title="{% trans 'Edit comment' %}" class="btn btn-default btn-sm">
                                 <i class="fa-solid fa-pencil"></i>
                         </a>
                         {% endif %}

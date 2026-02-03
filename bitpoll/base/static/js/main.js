@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("tr.script-only").css("display", "table-row");
     $("table.script-only").css("display", "table");
     $(".script-hidden").hide();
-    $(".script-hidden").addClass('hidden');
+    $(".script-hidden").addClass('d-none');
 
     $(".btn-js-back").click(function() {
         history.back();
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
         select.find("option").each(function() {
             var option = $(this);
-            var button = $('<button type="button" class="btn btn-sm btn-default"></button>');
+            var button = $('<button type="button" class="btn btn-sm btn-secondary"></button>');
             button.text(option.text());
             button.val(option.val());
             button.click(function() {

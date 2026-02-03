@@ -34,7 +34,7 @@
     border-radius: 0;
 }
 
-.btn {
+.btn:not(.btn-link) {
     border: 1px solid #d5d5d5;
     background: -webkit-gradient(linear, left top, left bottom, from(#FCFCFC), to(#EEE));
     color: #333;
@@ -83,7 +83,7 @@ body {
         margin-right: .5em;
     }
 
-    .navbar-nav > li > a {
+    .navbar-nav > li :is(a, .btn-link)  {
         color: #fff;
     }
 }
@@ -92,7 +92,7 @@ body {
     padding-bottom: 150px;
 }
 
-.btn-xs .fa-solid {
+.btn-sm .fa-solid {
     font-size: 14px;
     margin: -1px;
     vertical-align: -1px;
@@ -173,7 +173,7 @@ h2 { font-size: 1.7em; margin-top: 20px; }
 h3 { font-size: 1.5em; }
 h1 small { font-size: 0.6em; margin-left: 1em; }
 
-.page-header .pull-right {
+.page-header .float-right {
     margin: 20px 0;
 }
 
@@ -344,7 +344,7 @@ footer {
 .navbar .btn {
     border: none !important;
 
-    &.btn-default {
+    &.btn-secondary {
         background: rgba(255, 255, 255, 0.2);
         color: #FFF;
         transition: background 0.3s;
@@ -449,10 +449,6 @@ table tr.highlight td {
 tr.deleted, tr.deleted .color {
     color: #aaa;
     text-decoration: line-through;
-}
-
-#advanced-open {
-    margin: 0 -15px;
 }
 
 .public_polls {

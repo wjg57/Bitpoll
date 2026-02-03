@@ -28,47 +28,41 @@
 <body>
 <div id="wrapper">
     <header id="header">
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ base_url }}">{{ site_name }}</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-plus"></i>{% trans 'Create poll' %}</a></li>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                <a class="navbar-brand" href="{{ base_url }}">{{ site_name }}</a>
+                <button type="button" class="navbar-toggler collapsed border-0" data-toggle="collapse" data-target="#bp-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bp-navbar-collapse-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}"><i class="fa-solid fa-plus"></i>{% trans 'Create poll' %}</a></li>
                         {% if home_url %}
-                            <li><a href="{{ home_url }}"><i class="fa-solid fa-home"></i>{{ home_url_name }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ home_url }}"><i class="fa-solid fa-home"></i>{{ home_url_name }}</a></li>
                         {% endif %}
-                        <li><a href="{% url 'about' %}"><i class="fa-solid fa-question-circle"></i>{% trans 'About' %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-question-circle"></i>{% trans 'About' %}</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav ml-auto">
                     {% if request.user.is_anonymous %}
                         {% if register %}
-                            <li><a href="{% url 'registration_request_account' %}"><i class="fa-solid fa-pencil"></i>{% trans 'Register' %}</a></li>
+                            <li class="nav-item"><a href="{% url 'registration_request_account' %}" class="nav-link"><i class="fa-solid fa-pencil"></i>{% trans 'Register' %}</a></li>
                         {% endif %}
-                        <li><a href="{% url 'login' %}?next={{ request.path }}"><i class="fa-solid fa-sign-in"></i>{% trans 'Login' %}</a></li>
+                        <li class="nav-item"><a href="{% url 'login' %}?next={{ request.path }}" class="nav-link"><i class="fa-solid fa-sign-in"></i>{% trans 'Login' %}</a></li>
                     {% else %}
-                        <li><a href="{% url 'settings' %}"><i class="fa-solid fa-user"></i>{{ request.user.get_displayname }}</a></li>
+                        <li class="nav-item"><a href="{% url 'settings' %}" class="nav-link"><i class="fa-solid fa-user"></i>{{ request.user.get_displayname }}</a></li>
                         {% if group_management_enabled %}
                             {% load group_tags %}
                             {% open_invitations as oi %}
                             {% if oi %}
                                 <span class="badge">{{ oi }}</span>
                             {% endif %}
-                            <li><a href="{% url 'groups_index' %}"><i class="fa-solid fa-group"></i>{% trans 'Groups' %}</a></li>
+                            <li class="nav-item"><a href="{% url 'groups_index' %}" class="nav-link"><i class="fa-solid fa-group"></i>{% trans 'Groups' %}</a></li>
                         {% endif %}
-                        <li><a href="{% url 'settings' %}"><i class="fa-solid fa-pencil"></i>{% trans 'Settings' %}</a></li>
-												<li><form action="{% url 'logout' %}" method="post"> {% csrf_token %} <button type="submit"><i class="fa-solid fa-sign-in"></i> {% trans 'Logout' %}</button></form></li>
+                        <li class="nav-item"><a href="{% url 'settings' %}" class="nav-link"><i class="fa-solid fa-pencil"></i>{% trans 'Settings' %}</a></li>
+                        <li class="nav-item"><form action="{% url 'logout' %}" method="post" class="form-inline"> {% csrf_token %} <button class="btn btn-link nav-link" type="submit"><i class="fa-solid fa-sign-in"></i> {% trans 'Logout' %}</button></form></li>
                     {% endif %}
                     </ul>
                 </div>
-            </div>
         </nav>
     </header>
     <section id="main-content">
@@ -87,11 +81,11 @@
         <form class="form-inline" action="{% url 'set_language' %}" method="post">
             {% csrf_token %}
             <p>
-                <button name="language" value="de" class="btn-link lang-btn" type="submit">Deutsch</button>
+                <button name="language" value="de" class="btn btn-link lang-btn" type="submit">Deutsch</button>
                 &middot;
-                <button name="language" value="en" class="btn-link lang-btn" type="submit">English</button>
+                <button name="language" value="en" class="btn btn-link lang-btn" type="submit">English</button>
                 &middot;
-                <button name="language" value="it" class="btn-link lang-btn" type="submit">Italiano</button>
+                <button name="language" value="it" class="btn btn-link lang-btn" type="submit">Italiano</button>
             </p>
         </form>
 

@@ -13,7 +13,7 @@
         <label for="invitee">{% trans "Account names" %}</label>
         {% render_field form.invitees class+="form-control" id="invitees" %}
         {% if form.invitees.errors %}
-        <div class="help-block">
+        <div class="form-text">
         {% for error in form.invitees.errors %}{{ error }} {% endfor %}
         </div>
         {% endif %}

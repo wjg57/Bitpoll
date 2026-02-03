@@ -11,7 +11,7 @@
             <div class="col-md-5">
                 <form action="{{ request.url }}" class="form form-inline" method="POST">
                     {# This button gets activated if the user press enter (browsers should use the first button)#}
-                    <input type="submit" class="hidden" name="Save" value="{% trans 'Save' %}"/>
+                    <input type="submit" class="d-none" name="Save" value="{% trans 'Save' %}"/>
                     {% csrf_token %}
                     <table class="table">
                         <tbody>
@@ -44,13 +44,13 @@
                                     <strong>{{ choice.votechoice_count }}</strong> / {{ poll.vote_set.count }}
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-default btn-xs choice-move-up">
+                                    <a href="#" class="btn btn-default btn-sm choice-move-up">
                                         <i class="fa-solid fa-arrow-up"></i>
                                     </a>
-                                    <a href="#" class="btn btn-default btn-xs choice-move-down">
+                                    <a href="#" class="btn btn-default btn-sm choice-move-down">
                                         <i class="fa-solid fa-arrow-down"></i>
                                     </a>
-                                    <button name="delete" value="{{ choice.pk }}" class="btn btn-default btn-xs">
+                                    <button name="delete" value="{{ choice.pk }}" class="btn btn-default btn-sm">
                                         {% if not choice.deleted %}
                                             <i class="fa-solid fa-trash-o"></i>
                                         {% else %}

@@ -8,7 +8,7 @@
         <div class="poll-actions">
         </div>
         <h1>{{ poll.title }}{% if request.user.is_authenticated %}
-            <form class="form form-inline pull-right" action="{% url 'poll_watch' poll.url %}" method="post">
+            <form class="form form-inline float-right" action="{% url 'poll_watch' poll.url %}" method="post">
                 {% csrf_token %}
                 {% if request.user|is_watching:poll %}
                     <button class="action noprint" type="submit"><i class="fa-solid fa-eye-slash"></i> {% trans 'Unwatch Poll' %}</button>
