@@ -13,7 +13,7 @@ from django.contrib.auth.forms import PasswordChangeForm, SetPasswordForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, SuspiciousOperation
 from django.views.decorators.debug import sensitive_post_parameters
 
 from bitpoll.base.models import BitpollUser
@@ -108,6 +108,8 @@ def account_settings(request):
             messages.success(request, _("Password was changed."))
             return redirect('registration_account')
     elif form == 'change_nick':
+        # This form is disabled, it should not be submitted.
+        raise SuspiciousOperation("Invalid 'form' value.")
         nick_change_form = NickChangeForm(request.user, request.POST)
         if nick_change_form.is_valid():
             nick_change_form.save()

@@ -127,7 +127,7 @@
                     <label for="icon">{% trans 'Icon' %}</label>
                     <span class="help-inline">{% trans '(any FontAwesome icon)' %}</span>
                     <div class="input-group">
-                        <span class="input-group-addon">fa-solid fa-</span>
+                        <span class="input-group-prepend input-group-text">fa-solid fa-</span>
                         {% render_field form.icon class+="form-control" %}
                         {% if form.icon.errors %}
                             <div class="form-errors">

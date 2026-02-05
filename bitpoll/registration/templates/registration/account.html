@@ -44,7 +44,7 @@
                                 <div class="form-group{% if nick_change_form.nickname.errors %} has-error{% endif %}">
                                     <div class="input-group">
                                         {% render_field nick_change_form.nickname class+="form-control" style="width:20em" %}
-                                        <span class="input-group-addon"> ({{ username }})</span>
+                                        <span class="input-group-text input-group-append"> ({{ username }})</span>
                                     </div>
                                     {% if nick_change_form.nickname.errors %}
                                     <div class="form-text">

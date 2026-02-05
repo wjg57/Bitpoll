@@ -56,7 +56,7 @@
                             </button>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon">{% value_from_settings BASE_URL %}/poll/</span>
+                        <span class="input-group-prepend input-group-text">{% value_from_settings BASE_URL %}/poll/</span>
                         <input autocomplete="off" class="form-control" id="slug-input" name="{{ form.url.name }}"
                                placeholder="URL" type="text" value="{{ form.url.value|default_if_none:'' }}"/>
                     </div>
