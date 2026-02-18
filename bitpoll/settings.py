@@ -175,6 +175,7 @@ PIPELINE = {
         'base': {
             'source_filenames': (
                 'js/lib/jquery-3.7.1.js',
+                'js/lib/popper.js',
                 'js/lib/bootstrap.js',
             ),
             'output_filename': 'js/base.js',
