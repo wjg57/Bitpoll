@@ -15,8 +15,9 @@ PIPELINE_LOCAL = {}
 PIPELINE_LOCAL['JS_COMPRESSOR'] = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
 PIPELINE_LOCAL['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
 
+# The next ist used during the build but remains the default for the run!
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Europe/Berlin'
+TIME_ZONE = 'Europe/Zurich'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ## https://docs.djangoproject.com/en/1.9/ref/settings/#databases

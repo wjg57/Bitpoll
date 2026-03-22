@@ -18,7 +18,7 @@
 
 # Make sure we have the commands required
 failed=0
-for cmd in pwd mkdir sed cp chmod chown id docker openssl
+for cmd in pwd mkdir sed cp id docker openssl
 do
 	if ! type $cmd >/dev/null 2>&1
 	then
@@ -35,8 +35,15 @@ fi
 # Abort on errors and unset variables
 set -eu
 
-# Create the directory structure in the current directory
+# Create/Remove the directory structure in the current directory
 BASEDIR="$(pwd)"
+
+#	Remove
+case ${1:-notset} in
+clean) rm -rf $BASEDIR/run $BASEDIR/env; exit 0;;
+esac
+
+#	Create
 mkdir -p "$BASEDIR/run/config" "$BASEDIR/run/static" "$BASEDIR/run/log"
 
 # Create env file from env.example:
@@ -66,5 +73,9 @@ else
 	sed <"$BASEDIR/settings.example" >"$BASEDIR/run/config/settings.py" \
 		-e 's@^SECRET_KEY.*$@SECRET_KEY = '"'$(openssl rand -base64 16)'@" \
 		-e 's@^FIELD_ENCRYPTION_KEY.*$@FIELD_ENCRYPTION_KEY = '"'$(openssl rand -base64 32)'@"
+	echo >&2
+	echo "NOTE: You still have to adapt the settings in" >&2
+	echo "$BASEDIR/run/config/settings.py for your environment!" >&2
+	echo >&2
 fi
 
