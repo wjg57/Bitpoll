@@ -10,3 +10,4 @@ db.sqlite3
 *.mo
 bitpoll/settings_local.py
 run
+.env
