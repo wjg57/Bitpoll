@@ -1,0 +1,70 @@
+#!/bin/bash
+#
+# NAME:
+#	configure -- configure env and settings before build
+#
+# SYNOPSIS:
+#	congfigure
+#
+# DESCRIPTION:
+#	This procedure creates a working configuration for the build
+#	and deployment of bitpoll.
+#
+#	You should double check the generated files, namely
+#		env
+#		run/config/settings.py
+#		run/config/nginx.conf
+#	before building!
+
+# Make sure we have the commands required
+failed=0
+for cmd in pwd mkdir sed cp chmod chown id docker openssl
+do
+	if ! type $cmd >/dev/null 2>&1
+	then
+		echo "Required command $cmd not found!" >&2
+		failed=$(($failed + 1))
+	fi
+done
+if [ $failed -ne 0 ]
+then
+	echo "Fix above errors first. Aborting..." >&2
+	exit 99
+fi
+
+# Abort on errors and unset variables
+set -eu
+
+# Create the directory structure in the current directory
+BASEDIR="$(pwd)"
+mkdir -p "$BASEDIR/run/config" "$BASEDIR/run/static" "$BASEDIR/run/log"
+
+# Create env file from env.example:
+if [ -f "$BASEDIR/env" ]
+then
+	echo "$BASEDIR/env already exists - not touching it!" >&2
+else
+	sed <"$BASEDIR/env.example" >"$BASEDIR/env" \
+	    -e 's@^BASEDIR=.*$@BASEDIR='"$BASEDIR@" \
+	    -e 's@^UID=.*$@UID='"$(id -u)@" \
+	    -e 's@^GID=.*$@GID='"$(id -g)@"
+fi
+
+# Copy nginx configuration
+if [ -f "$BASEDIR/run/config/nginx.conf" ]
+then
+	echo "$BASEDIR/run/config/nginx.conf already exists - not touching it!" >&2
+else
+	cp "$BASEDIR/docker_files/nginx/nginx.conf" "$BASEDIR/run/config/nginx.conf"
+fi
+
+# Copy Bitpoll configuration
+if [ -f "$BASEDIR/run/config/settings.py" ]
+then
+	echo "$BASEDIR/run/config/settings.py already exists - not touching it!" >&2
+else
+	sed <"$BASEDIR/settings.example" >"$BASEDIR/run/config/settings.py" \
+		-e 's@^SECRET_KEY.*$@SECRET_KEY = '"'$(openssl rand -base64 16)'@" \
+		-e 's@^FIELD_ENCRYPTION_KEY.*$@FIELD_ENCRYPTION_KEY = '"'$(openssl rand -base64 32)'@"
+fi
+

@@ -9,8 +9,12 @@ FROM python:3.13-slim AS common-base
 #ENV DJANGO_SETTINGS_MODULE foo.settings
 
 #	Our UID and GID
-ENV UID=1001
-ENV GID=1001
+#		During build
+ARG UID
+ARG GID
+#		During run
+ENV UID=$UID
+ENV GID=$GID
 
 #	Make our local user the www-data user in the container,
 #	such that files that belong to us locally are accessible.
