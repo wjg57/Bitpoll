@@ -40,18 +40,18 @@ BASEDIR="$(pwd)"
 
 #	Remove
 case ${1:-notset} in
-clean) rm -rf $BASEDIR/run $BASEDIR/env; exit 0;;
+clean) rm -rf $BASEDIR/run $BASEDIR/.env; exit 0;;
 esac
 
 #	Create
 mkdir -p "$BASEDIR/run/config" "$BASEDIR/run/static" "$BASEDIR/run/log"
 
 # Create env file from env.example:
-if [ -f "$BASEDIR/env" ]
+if [ -f "$BASEDIR/.env" ]
 then
-	echo "$BASEDIR/env already exists - not touching it!" >&2
+	echo "$BASEDIR/.env already exists - not touching it!" >&2
 else
-	sed <"$BASEDIR/env.example" >"$BASEDIR/env" \
+	sed <"$BASEDIR/env.example" >"$BASEDIR/.env" \
 	    -e 's@^BASEDIR=.*$@BASEDIR='"$BASEDIR@" \
 	    -e 's@^UID=.*$@UID='"$(id -u)@" \
 	    -e 's@^GID=.*$@GID='"$(id -g)@"

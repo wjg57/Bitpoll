@@ -5,9 +5,6 @@ services:
     ports:
       - 3008:3008  # uwsgi port - should only be visible to web frontend.
       - 3009:3009  # http port - should only be used during testing.
-    env_file:
-      - path: ./env
-        required: true
     build:
       dockerfile: Dockerfile
       context: .
@@ -28,9 +25,6 @@ services:
     restart: unless-stopped
     depends_on:
       - bitpoll
-    env_file:
-      - path: ./env
-        required: true
     volumes:
       # NGINX configuration
       - ${BASEDIR}/run/config/nginx.conf:/etc/nginx/conf.d/default.conf
