@@ -1,6 +1,23 @@
-#!/bin/sh -e
-export USER=www-data HOME=/opt/bitpoll
-python3 /opt/bitpoll/manage.py migrate
-rm -rf /opt/static/*
-cp -r /opt/bitpoll/_static/* /opt/static/
-exec uwsgi /etc/uwsgi/bitpoll.ini
+#!/bin/bash
+
+# Abort on errors
+set -euo pipefail
+
+export USER=www-data GROUP=www-data HOME=/opt/bitpoll
+
+# Make sure the mandatory config exists:
+if [ ! -f /opt/config/settings.py ] 
+then
+	echo "Mandatory config/settings.py is missing!"
+	echo "Aborting execution"
+	exit 1
+else
+	python3 /opt/bitpoll/manage.py migrate
+	rm -rf /opt/static/*
+	cp -r /opt/bitpoll/_static/* /opt/static/
+	# Make sure we can write to our directories:
+	chown -R $USER:$GROUP /opt/bitpoll /opt/static /opt/config
+
+	# Now delegate to the server
+	exec uwsgi /etc/uwsgi/bitpoll.ini
+fi
